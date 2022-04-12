@@ -2804,12 +2804,12 @@ var KTChartsWidget19 = {
 							panY: !1,
 							wheelX: "panX",
 							wheelY: "zoomX",
-							innerRadius: am5.percent(10),
+							innerRadius: am5.percent(25),
 							startAngle: -90,
 							endAngle: 180
 						})),
 						l = [{
-							category: "Solid Waste",
+							category: "Green Area",
 							value: 80,
 							full: 100,
 							columnSettings: {
@@ -2817,7 +2817,7 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-info"))
 							}
 						}, {
-							category: "Plastic Waste",
+							category: "Afforestation",
 							value: 60,
 							full: 100,
 							columnSettings: {
@@ -2825,7 +2825,7 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-danger"))
 							}
 						}, {
-							category: "Biomedical Waste",
+							category: "Renewable Energy",
 							value: 92,
 							full: 100,
 							columnSettings: {
@@ -2833,28 +2833,12 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
 							}
 						}, {
-							category: "Hazardous Waste",
+							category: "Rain Water ",
 							value: 60,
 							full: 100,
 							columnSettings: {
 								fillOpacity: 1,
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-success"))
-							}
-						}, {
-							category: "E-Waste",
-							value: 70,
-							full: 100,
-							columnSettings: {
-								fillOpacity: 1,
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-gray"))
-							}
-						}, {
-							category: "C & D Waste",
-							value: 80,
-							full: 100,
-							columnSettings: {
-								fillOpacity: 1,
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-orange"))
 							}
 						}];
 					t.set("cursor", am5radar.RadarCursor.new(a, {
@@ -2916,7 +2900,7 @@ var KTChartsWidget19 = {
 						width: am5.p100,
 						strokeOpacity: 0,
 						tooltipText: "{category}: {valueX}%",
-						cornerRadius: 20,
+						cornerRadius: 40,
 						templateField: "columnSettings"
 					}), m.data.setAll(l), n.appear(1e3), m.appear(1e3), t.appear(1e3, 100)
 				}))
@@ -2993,7 +2977,7 @@ var KTChartsWidget19 = {
 					i.labels.template.setAll({
 						centerX: am5.p100,
 						fontWeight: "500",
-						fontSize: 18,
+						fontSize: 6,
 						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
 						templateField: "columnSettings"
 					}), i.grid.template.setAll({
