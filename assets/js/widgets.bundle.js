@@ -3024,6 +3024,245 @@ var KTChartsWidget19 = {
 "undefined" != typeof module && (module.exports = KTChartsWidget19), KTUtil.onDOMContentLoaded((function () {
 	KTChartsWidget19.init()
 }));
+
+var KTChartsWidget222 = {
+	init: function () {
+		! function () {
+			if ("undefined" != typeof am5) {
+				var e = document.getElementById("kt_charts_widget_222_chart_1");
+				e && am5.ready((function () {
+					var a = am5.Root.new(e);
+					a.setThemes([am5themes_Animated.new(a)]);
+					var t = a.container.children.push(am5radar.RadarChart.new(a, {
+							panX: !1,
+							panY: !1,
+							wheelX: "panX",
+							wheelY: "zoomX",
+							innerRadius: am5.percent(25),
+							startAngle: -90,
+							endAngle: 180
+						})),
+						l = [{
+							category: "Green Area",
+							value: 80,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-info"))
+							}
+						}, {
+							category: "Afforestation",
+							value: 60,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-danger"))
+							}
+						}, {
+							category: "Renewable Energy",
+							value: 92,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							category: "Rain Water ",
+							value: 60,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-success"))
+							}
+						}];
+					t.set("cursor", am5radar.RadarCursor.new(a, {
+						behavior: "zoomX"
+					})).lineY.set("visible", !1);
+					var o = am5radar.AxisRendererCircular.new(a, {});
+					o.labels.template.setAll({
+						radius: 10
+					}), o.grid.template.setAll({
+						forceHidden: !0
+					});
+					var r = t.xAxes.push(am5xy.ValueAxis.new(a, {
+							renderer: o,
+							min: 0,
+							max: 100,
+							strictMinMax: !0,
+							numberFormat: "#'%'",
+							tooltip: am5.Tooltip.new(a, {})
+						})),
+						i = am5radar.AxisRendererRadial.new(a, {
+							minGridDistance: 20
+						});
+					i.labels.template.setAll({
+						centerX: am5.p100,
+						fontWeight: "500",
+						fontSize: 16,
+						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+						templateField: "columnSettings"
+					}), i.grid.template.setAll({
+						forceHidden: !0
+					});
+					var s = t.yAxes.push(am5xy.CategoryAxis.new(a, {
+						categoryField: "category",
+						renderer: i
+					}));
+					s.data.setAll(l);
+					var n = t.series.push(am5radar.RadarColumnSeries.new(a, {
+						xAxis: r,
+						yAxis: s,
+						clustered: !1,
+						valueXField: "full",
+						categoryYField: "category",
+						fill: a.interfaceColors.get("alternativeBackground")
+					}));
+					n.columns.template.setAll({
+						width: am5.p100,
+						fillOpacity: .08,
+						strokeOpacity: 0,
+						cornerRadius: 20
+					}), n.data.setAll(l);
+					var m = t.series.push(am5radar.RadarColumnSeries.new(a, {
+						xAxis: r,
+						yAxis: s,
+						clustered: !1,
+						valueXField: "value",
+						categoryYField: "category"
+					}));
+					m.columns.template.setAll({
+						width: am5.p100,
+						strokeOpacity: 0,
+						tooltipText: "{category}: {valueX}%",
+						cornerRadius: 40,
+						templateField: "columnSettings"
+					}), m.data.setAll(l), n.appear(1e3), m.appear(1e3), t.appear(1e3, 100)
+				}))
+			}
+		}(),
+		function () {
+			if ("undefined" != typeof am5) {
+				var e = document.getElementById("kt_charts_widget_222_chart_2");
+				e && am5.ready((function () {
+					var a = am5.Root.new(e);
+					a.setThemes([am5themes_Animated.new(a)]);
+					var t = a.container.children.push(am5radar.RadarChart.new(a, {
+							panX: !1,
+							panY: !1,
+							wheelX: "panX",
+							wheelY: "zoomX",
+							innerRadius: am5.percent(20),
+							startAngle: -90,
+							endAngle: 180
+						})),
+						l = [{
+							category: "Research",
+							value: 40,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-info"))
+							}
+						}, {
+							category: "Marketing",
+							value: 50,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-danger"))
+							}
+						}, {
+							category: "Distribution",
+							value: 80,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							category: "Human Resources",
+							value: 70,
+							full: 100,
+							columnSettings: {
+								fillOpacity: 1,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-success"))
+							}
+						}];
+					t.set("cursor", am5radar.RadarCursor.new(a, {
+						behavior: "zoomX"
+					})).lineY.set("visible", !1);
+					var o = am5radar.AxisRendererCircular.new(a, {});
+					o.labels.template.setAll({
+						radius: 10
+					}), o.grid.template.setAll({
+						forceHidden: !0
+					});
+					var r = t.xAxes.push(am5xy.ValueAxis.new(a, {
+							renderer: o,
+							min: 0,
+							max: 100,
+							strictMinMax: !0,
+							numberFormat: "#'%'",
+							tooltip: am5.Tooltip.new(a, {})
+						})),
+						i = am5radar.AxisRendererRadial.new(a, {
+							minGridDistance: 20
+						});
+					i.labels.template.setAll({
+						centerX: am5.p100,
+						fontWeight: "500",
+						fontSize: 6,
+						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+						templateField: "columnSettings"
+					}), i.grid.template.setAll({
+						forceHidden: !0
+					});
+					var s = t.yAxes.push(am5xy.CategoryAxis.new(a, {
+						categoryField: "category",
+						renderer: i
+					}));
+					s.data.setAll(l);
+					var n = t.series.push(am5radar.RadarColumnSeries.new(a, {
+						xAxis: r,
+						yAxis: s,
+						clustered: !1,
+						valueXField: "full",
+						categoryYField: "category",
+						fill: a.interfaceColors.get("alternativeBackground")
+					}));
+					n.columns.template.setAll({
+						width: am5.p100,
+						fillOpacity: .08,
+						strokeOpacity: 0,
+						cornerRadius: 20
+					}), n.data.setAll(l);
+					var m = t.series.push(am5radar.RadarColumnSeries.new(a, {
+						xAxis: r,
+						yAxis: s,
+						clustered: !1,
+						valueXField: "value",
+						categoryYField: "category"
+					}));
+					m.columns.template.setAll({
+						width: am5.p100,
+						strokeOpacity: 0,
+						tooltipText: "{category}: {valueX}%",
+						cornerRadius: 20,
+						templateField: "columnSettings"
+					}), m.data.setAll(l), n.appear(1e3), m.appear(1e3), t.appear(1e3, 100)
+				}))
+			}
+		}()
+	}
+};
+"undefined" != typeof module && (module.exports = KTChartsWidget222), KTUtil.onDOMContentLoaded((function () {
+	KTChartsWidget222.init()
+}));
+
+
+
+
+
 var KTChartsWidget2 = {
 	init: function () {
 		var e;
