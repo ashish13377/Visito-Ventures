@@ -235,161 +235,7 @@ var KTChartsWidget19 = {
 }));
 //Chart : END
 
-//Air & Noise Chart
-var KTChartsWidget20 = {
-	init: function () {
-		! function () {
-			var e = document.getElementById("kt_charts_widget_20");
-			if (e) {
-				var a = parseInt(KTUtil.css(e, "height")),
-					t = KTUtil.getCssVariableValue("--bs-gray-500"),
-					l = KTUtil.getCssVariableValue("--bs-border-dashed-color"),
-					i = e.getAttribute("data-kt-chart-color"),
-					o = KTUtil.getCssVariableValue("--bs-danger"),
-					r = KTUtil.getCssVariableValue("--bs-danger"),
-					s = new ApexCharts(e, {
-						series: [{
-							name: "AQ", //Air & Noise chart
-							data: [22, 34, 35, 35, 36, 38, 38, 39, 39, 41]
-						},{
-							name: "Noise Monitoring",
-							data: [30, 32, 32, 31.5, 35, 35, 33.5, 34, 32.5, 30]
-						}],
-						chart: {
-							fontFamily: "inherit",
-							type: "area",
-							height: a,
-							toolbar: {
-								show: !1
-							}
-						},
-						plotOptions: {},
-						legend: {
-							show: !1
-						},
-						dataLabels: {
-							enabled: !1
-						},
-						fill: {
-							type: "gradient",
-							gradient: {
-								shadeIntensity: 1,
-								opacityFrom: .4,
-								opacityTo: 0,
-								stops: [0, 80, 100]
-							}
-						},
-						stroke: {
-							curve: "smooth",
-							show: !0,
-							width: 3,
-							colors: [o]
-						},
-						xaxis: {
-							categories: ["", "Apr 02", "Apr 03", "Apr 04", "Apr 05", "Apr 06", "Apr 07", "Apr 08", "Apr 09", "Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 14", "Apr 17", "Apr 18", "Apr 19", "Apr 21", ""],
-							axisBorder: {
-								show: !1
-							},
-							axisTicks: {
-								show: !1
-							},
-							tickAmount: 6,
-							labels: {
-								rotate: 0,
-								rotateAlways: !0,
-								style: {
-									colors: t,
-									fontSize: "12px"
-								}
-							},
-							crosshairs: {
-								position: "front",
-								stroke: {
-									color: o,
-									width: 1,
-									dashArray: 3
-								}
-							},
-							tooltip: {
-								enabled: !0,
-								formatter: void 0,
-								offsetY: 0,
-								style: {
-									fontSize: "12px"
-								}
-							}
-						},
-						yaxis: {
-							max: 41,
-							min: 20,
-							tickAmount: 6,
-							labels: {
-								style: {
-									colors: t,
-									fontSize: "12px"
-								},
-								formatter: function (e) {
-									return parseInt(10* e)
-								}
-							}
-						},
-						states: {
-							normal: {
-								filter: {
-									type: "none",
-									value: 0
-								}
-							},
-							hover: {
-								filter: {
-									type: "none",
-									value: 0
-								}
-							},
-							active: {
-								allowMultipleDataPointsSelection: !1,
-								filter: {
-									type: "none",
-									value: 0
-								}
-							}
-						},
-						tooltip: {
-							style: {
-								fontSize: "12px"
-							},
-							y: {
-								formatter: function (e) {
-									return parseInt(10 * e)
-								}
-							}
-						},
-						colors: [r],
-						grid: {
-							borderColor: l,
-							strokeDashArray: 4,
-							yaxis: {
-								lines: {
-									show: !0
-								}
-							}
-						},
-						markers: {
-							strokeColor: o,
-							strokeWidth: 3
-						}
-					});
-				setTimeout((function () {
-					s.render()
-				}), 200)
-			}
-		}()
-	}
-};
-"undefined" != typeof module && (module.exports = KTChartsWidget20), KTUtil.onDOMContentLoaded((function () {
-	KTChartsWidget20.init()
-}));
-//Chart : END
+
 
 //This chart is getting used
 var KTChartsWidget23 = {
@@ -561,7 +407,8 @@ var KTChartsWidget23 = {
 	KTChartsWidget23.init()
 }));
 //Chart : END
-//This chart is getting used
+
+//Hazardous Waste Chart : START
 var KTChartsWidget33 = function () {
 	var e = function (e, a, t, l, o) {
 		var r = document.querySelector(a);
@@ -574,13 +421,13 @@ var KTChartsWidget33 = function () {
 				g = new ApexCharts(r, {
 					series: [{
 						name: "Stock ",
-						data: t
+						data: [30, 32, 32, 33, 35, 35, 33.5, 28, 29.5, 30]
 					},{
 						name: "Generation ",
-						data: t
+						data: [20, 32, 30, 31.5, 35, 35, 33.5, 34, 32.5, 30]
 					},{
 						name: "Disposal ",
-						data: t
+						data: [30, 25, 32, 34.5, 42, 35, 35, 34, 32.5, 33]
 					}],
 					chart: {
 						fontFamily: "inherit",
@@ -649,8 +496,8 @@ var KTChartsWidget33 = function () {
 					},
 					yaxis: {
 						tickAmount: 4,
-						max: 4e3,
-						min: 1e3,
+						max: 50,
+						min: 20,
 						labels: {
 							show: !1
 						}
@@ -682,7 +529,7 @@ var KTChartsWidget33 = function () {
 						},
 						y: {
 							formatter: function (e) {
-								return e + "$"
+								return e 
 							}
 						}
 					},
@@ -717,4 +564,162 @@ var KTChartsWidget33 = function () {
 "undefined" != typeof module && (module.exports = KTChartsWidget33), KTUtil.onDOMContentLoaded((function () {
 	KTChartsWidget33.init()
 }));
+//Hazardous Waste Chart : END
+
+//Air & Noise Chart
+var KTChartsWidget20 = {
+	init: function () {
+		! function () {
+			var e = document.getElementById("kt_charts_widget_20");
+			if (e) {
+				var a = parseInt(KTUtil.css(e, "height")),
+					t = KTUtil.getCssVariableValue("--bs-gray-500"),
+					l = KTUtil.getCssVariableValue("--bs-border-dashed-color"),
+					i = e.getAttribute("data-kt-chart-color"),
+					o = KTUtil.getCssVariableValue("--bs-danger"),
+					q = KTUtil.getCssVariableValue("--bs-indigo"),
+					r = KTUtil.getCssVariableValue("--bs-red"),
+					s = new ApexCharts(e, {
+						series: [{
+							name: "AQ",
+							data: [22, 34, 35, 35, 36, 38, 38, 39, 39, 41]
+						},{
+							name: "Noise Monitoring",
+							data: [30, 32, 32, 31.5, 35, 35, 33.5, 34, 32.5, 30]
+						}],
+						chart: {
+							fontFamily: "inherit",
+							type: "area",
+							height: a,
+							toolbar: {
+								show: !1
+							}
+						},
+						plotOptions: {},
+						legend: {
+							show: !1
+						},
+						dataLabels: {
+							enabled: !1
+						},
+						fill: {
+							type: "gradient",
+							gradient: {
+								shadeIntensity: 1,
+								opacityFrom: .4,
+								opacityTo: 0,
+								stops: [0, 80, 100]
+							}
+						},
+						stroke: {
+							curve: "smooth",
+							show: !0,
+							width: 3,
+							colors: [o, q]
+						},
+						xaxis: {
+							categories: ["", "Apr 02", "Apr 03", "Apr 04", "Apr 05", "Apr 06", "Apr 07", "Apr 08", "Apr 09", "Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 14", "Apr 17", "Apr 18", "Apr 19", "Apr 21", ""],
+							axisBorder: {
+								show: !1
+							},
+							axisTicks: {
+								show: !1
+							},
+							tickAmount: 6,
+							labels: {
+								rotate: 0,
+								rotateAlways: !0,
+								style: {
+									colors: t,
+									fontSize: "12px"
+								}
+							},
+							crosshairs: {
+								position: "front",
+								stroke: {
+									color: o,
+									width: 1,
+									dashArray: 3
+								}
+							},
+							tooltip: {
+								enabled: !0,
+								formatter: void 0,
+								offsetY: 0,
+								style: {
+									fontSize: "12px"
+								}
+							}
+						},
+						yaxis: {
+							max: 41,
+							min: 20,
+							tickAmount: 6,
+							labels: {
+								style: {
+									colors: t, q,
+									fontSize: "12px"
+								},
+								formatter: function (e) {
+									return parseInt(10* e)
+								}
+							}
+						},
+						states: {
+							normal: {
+								filter: {
+									type: "none",
+									value: 0
+								}
+							},
+							hover: {
+								filter: {
+									type: "none",
+									value: 0
+								}
+							},
+							active: {
+								allowMultipleDataPointsSelection: !1,
+								filter: {
+									type: "none",
+									value: 0
+								}
+							}
+						},
+						tooltip: {
+							style: {
+								fontSize: "12px"
+							},
+							y: {
+								formatter: function (e) {
+									return parseInt(10 * e)
+								}
+							}
+						},
+						colors: [r, q],
+						grid: {
+							borderColor: l,
+							strokeDashArray: 4,
+							yaxis: {
+								lines: {
+									show: !0
+								}
+							}
+						},
+						markers: {
+							strokeColor: o,
+							strokeWidth: 3
+						}
+					});
+				setTimeout((function () {
+					s.render()
+				}), 200)
+			}
+		}()
+	}
+};
+"undefined" != typeof module && (module.exports = KTChartsWidget20), KTUtil.onDOMContentLoaded((function () {
+	KTChartsWidget20.init()
+}));
 //Chart : END
+
