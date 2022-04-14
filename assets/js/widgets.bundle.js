@@ -9684,9 +9684,16 @@ var KTChartsWidget33 = function () {
 				d = KTUtil.getCssVariableValue("--bs-" + i),
 				g = new ApexCharts(r, {
 					series: [{
-						name: "Etherium ",
+						name: "Stock",
 						data: t
-					}],
+					},{
+						name: "Generation",
+						data: t
+					},{
+						name: "Disposal",
+						data: t
+					}
+					],
 					chart: {
 						fontFamily: "inherit",
 						type: "area",
