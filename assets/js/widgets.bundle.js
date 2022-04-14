@@ -237,176 +237,7 @@ var KTChartsWidget19 = {
 
 
 
-//This chart is getting used
-var KTChartsWidget23 = {
-	init: function () {
-		! function () {
-			if ("undefined" != typeof am5) {
-				var e = document.getElementById("kt_charts_widget_23");
-				e && am5.ready((function () {
-					var a = am5.Root.new(e);
-					a.setThemes([am5themes_Animated.new(a)]);
-					var t = a.container.children.push(am5xy.XYChart.new(a, {
-							panX: !1,
-							panY: !1,
-							layout: a.verticalLayout
-						})),
-						l = [{
-							year: "2016",
-							qty: 23.5,
-							expenses: 21.1,
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2017",
-							qty: 26.2,
-							expenses: 30.5,
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2018",
-							qty: 30.1,
-							expenses: 34.9,
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2019",
-							qty: 29.5,
-							expenses: 31.1,
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2020",
-							qty: 30.6,
-							expenses: 28.2,
-							strokeSettings: {
-								strokeWidth: 3,
-								strokeDasharray: [5, 5]
-							},
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2021",
-							qty: 40.6,
-							expenses: 28.2,
-							strokeSettings: {
-								strokeWidth: 3,
-								strokeDasharray: [5, 5]
-							},
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}, {
-							year: "2022",
-							qty: 34.1,
-							expenses: 32.9,
-							strokeSettings: {
-								strokeWidth: 3,
-								strokeDasharray: [5, 5]
-							},
-							columnSettings: {
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
-							}
-						}],
-						o = t.xAxes.push(am5xy.CategoryAxis.new(a, {
-							categoryField: "year",
-							renderer: am5xy.AxisRendererX.new(a, {})
-						}));
-					o.data.setAll(l), o.get("renderer").labels.template.setAll({
-						paddingTop: 20,
-						fontWeight: "400",
-						fontSize: 11,
-						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500"))
-					}), o.get("renderer").grid.template.setAll({
-						disabled: !0,
-						strokeOpacity: 0
-					});
-					var r = t.yAxes.push(am5xy.ValueAxis.new(a, {
-						min: 0,
-						extraMax: .1,
-						renderer: am5xy.AxisRendererY.new(a, {})
-					}));
-					r.get("renderer").labels.template.setAll({
-						paddingTop: 0,
-						fontWeight: "400",
-						fontSize: 11,
-						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500"))
-					}), r.get("renderer").grid.template.setAll({
-						stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
-						strokeWidth: 1,
-						strokeOpacity: 1,
-						strokeDasharray: [3]
-					});
-					var i = t.series.push(am5xy.ColumnSeries.new(a, {
-						name: "Generation & Treatment",
-						xAxis: o,
-						yAxis: r,
-						valueYField: "qty",
-						categoryXField: "year",
-						tooltip: am5.Tooltip.new(a, {
-							pointerOrientation: "horizontal",
-							labelText: "{name} in {categoryX}: {valueY} {info}"
-						})
-					}));
-					i.columns.template.setAll({
-						tooltipY: am5.percent(10),
-						templateField: "columnSettings"
-					}), i.data.setAll(l);
-					var s = t.series.push(am5xy.LineSeries.new(a, {
-						name: "Consumed Internally",
-						xAxis: o,
-						yAxis: r,
-						valueYField: "expenses",
-						categoryXField: "year",
-						fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
-						stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
-						tooltip: am5.Tooltip.new(a, {
-							pointerOrientation: "horizontal",
-							labelText: "{name} in {categoryX}: {valueY} {info}"
-						})
-					}));
-					s.strokes.template.setAll({
-						stroke: am5.color(KTUtil.getCssVariableValue("--bs-success"))
-					}), s.strokes.template.setAll({
-						strokeWidth: 3,
-						templateField: "strokeSettings"
-					}), s.data.setAll(l), s.bullets.push((function () {
-						return am5.Bullet.new(a, {
-							sprite: am5.Circle.new(a, {
-								strokeWidth: 3,
-								stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
-								radius: 5,
-								fill: am5.color(KTUtil.getCssVariableValue("--bs-light-success"))
-							})
-						})
-					})), i.columns.template.setAll({
-						strokeOpacity: 0,
-						cornerRadiusBR: 0,
-						cornerRadiusTR: 6,
-						cornerRadiusBL: 0,
-						cornerRadiusTL: 6
-					}), t.set("cursor", am5xy.XYCursor.new(a, {})), t.get("cursor").lineX.setAll({
-						visible: !1
-					}), t.get("cursor").lineY.setAll({
-						visible: !1
-					}), t.children.push(am5.Legend.new(a, {
-						centerX: am5.p50,
-						x: am5.p50
-					})).data.setAll(t.series.values), t.appear(1e3, 100), i.appear()
-				}))
-			}
-		}()
-	}
-};
-"undefined" != typeof module && (module.exports = KTChartsWidget23), KTUtil.onDOMContentLoaded((function () {
-	KTChartsWidget23.init()
-}));
-//Chart : END
+
 
 //Hazardous Waste Chart : START
 var KTChartsWidget33 = function () {
@@ -723,3 +554,192 @@ var KTChartsWidget20 = {
 }));
 //Chart : END
 
+//Waste Waste Chart : START
+var KTChartsWidget23 = {
+	init: function () {
+		! function () {
+			if ("undefined" != typeof am5) {
+				var e = document.getElementById("kt_charts_widget_23");
+				e && am5.ready((function () {
+					var a = am5.Root.new(e);
+					a.setThemes([am5themes_Animated.new(a)]);
+					var t = a.container.children.push(am5xy.XYChart.new(a, {
+							panX: !1,
+							panY: !1,
+							layout: a.verticalLayout
+						})),
+						l = [{
+							year: "2016",
+							qty: 23.5,
+							ci: 21.1,
+							do: 15.3,
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2017",
+							qty: 30.2,
+							ci: 16.5,
+							do: 23.3,
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2018",
+							qty: 34.1,
+							ci: 19.9,
+							do: 15.3,
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2019",
+							qty: 31.5,
+							ci: 16.2,
+							do: 15.3,
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2020",
+							qty: 30.6,
+							ci: 28.2,
+							do: 15.3,
+							strokeSettings: {
+								strokeWidth: 3,
+								strokeDasharray: [5, 5]
+							},
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2021",
+							qty: 40.6,
+							ci: 28.2,							
+							do: 15.3,
+							strokeSettings: {
+								strokeWidth: 3,
+								strokeDasharray: [5, 5]
+							},
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}, {
+							year: "2022",
+							qty: 34.1,
+							ci: 32.9,							
+							do: 15.3,
+							strokeSettings: {
+								strokeWidth: 3,
+								strokeDasharray: [5, 5]
+							},
+							columnSettings: {
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
+							}
+						}],
+						o = t.xAxes.push(am5xy.CategoryAxis.new(a, {
+							categoryField: "year",
+							renderer: am5xy.AxisRendererX.new(a, {})
+						}));
+					o.data.setAll(l), o.get("renderer").labels.template.setAll({
+						paddingTop: 20,
+						fontWeight: "400",
+						fontSize: 11,
+						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500"))
+					}), o.get("renderer").grid.template.setAll({
+						disabled: !0,
+						strokeOpacity: 0
+					});
+					var r = t.yAxes.push(am5xy.ValueAxis.new(a, {
+						min: 0,
+						extraMax: .1,
+						renderer: am5xy.AxisRendererY.new(a, {})
+					}));
+					r.get("renderer").labels.template.setAll({
+						paddingTop: 0,
+						fontWeight: "400",
+						fontSize: 11,
+						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500"))
+					}), r.get("renderer").grid.template.setAll({
+						stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+						strokeWidth: 1,
+						strokeOpacity: 1,
+						strokeDasharray: [3]
+					});
+					var i = t.series.push(am5xy.ColumnSeries.new(a, {
+						name: "Generation & Treatment",
+						xAxis: o,
+						yAxis: r,
+						valueYField: "qty",
+						categoryXField: "year",
+						tooltip: am5.Tooltip.new(a, {
+							pointerOrientation: "horizontal",
+							labelText: "{name} in {categoryX}: {valueY} {info}"
+						})
+					}));
+					i.columns.template.setAll({
+						tooltipY: am5.percent(10),
+						templateField: "columnSettings"
+					}), i.data.setAll(l);
+					var q = t.series.push(am5xy.LineSeries.new(a, {
+						name: "Discharged Outside",
+						xAxis: o,
+						yAxis: r,
+						valueYField: "do",
+						categoryXField: "year",
+						tooltip: am5.Tooltip.new(a, {
+							pointerOrientation: "horizontal",
+							labelText: "{name} in {categoryX}: {valueY} {info}"
+						})
+					}));
+
+					var s = t.series.push(am5xy.LineSeries.new(a, {
+						name: "Consumed Internally",
+						xAxis: o,
+						yAxis: r,
+						valueYField: "ci",
+						categoryXField: "year",
+						fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
+						stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
+						tooltip: am5.Tooltip.new(a, {
+							pointerOrientation: "horizontal",
+							labelText: "{name} in {categoryX}: {valueY} {info}"
+						})
+					}));
+					s.strokes.template.setAll({
+						stroke: am5.color(KTUtil.getCssVariableValue("--bs-success"))
+					}), s.strokes.template.setAll({
+						strokeWidth: 3,
+						templateField: "strokeSettings"
+					}), s.data.setAll(l), s.bullets.push((function () {
+						return am5.Bullet.new(a, {
+							sprite: am5.Circle.new(a, {
+								strokeWidth: 3,
+								stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
+								radius: 5,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-light-success"))
+							})
+						})
+					})), i.columns.template.setAll({
+						strokeOpacity: 0,
+						cornerRadiusBR: 0,
+						cornerRadiusTR: 6,
+						cornerRadiusBL: 0,
+						cornerRadiusTL: 6
+					}), t.set("cursor", am5xy.XYCursor.new(a, {})), t.get("cursor").lineX.setAll({
+						visible: !1
+					}), t.get("cursor").lineY.setAll({
+						visible: !1
+					}), t.children.push(am5.Legend.new(a, {
+						centerX: am5.p50,
+						x: am5.p50
+					})).data.setAll(t.series.values), t.appear(1e3, 100), i.appear()
+				}))
+			}
+		}()
+	}
+};
+"undefined" != typeof module && (module.exports = KTChartsWidget23), KTUtil.onDOMContentLoaded((function () {
+	KTChartsWidget23.init()
+}));
+//Waste Water Chart : END
