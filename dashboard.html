@@ -20,6 +20,9 @@ Follow:
 	<meta property="og:title" content="" />
 	<meta property="og:url" content="" />
 	<meta property="og:site_name" content="" />
+	<!--rotating cube-->
+	<link rel="stylesheet" href="style.css">
+
 	<link rel="canonical" href="" />
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<!--begin::Fonts-->
@@ -33,6 +36,8 @@ Follow:
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 	<!--end::Global Stylesheets Bundle-->
+	<link rel="stylesheet" href="boxroll-slider.css">
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -4294,7 +4299,6 @@ Follow:
 													<!--begin::Title-->
 													<h3 class="card-title align-items-start flex-column">
 														<span class="card-label fw-bolder text-dark">Display Board</span>
-														<span class="text-gray-400 mt-1 fw-bold fs-6">Need to add cube flipping 6 sides animation here</span>
 													</h3>
 													<!--end::Title-->
 												</div>
@@ -4304,18 +4308,30 @@ Follow:
 													<!--begin::Tab Content (ishlamayabdi)-->
 													<div class="tab-content">
 														<!--begin::Tap pane-->
-														<div class="tab-pane fade show active"
-															id="kt_chart_widget_222_tab_content_1">
-															<!--begin::Chart container-->
-															<div id="kt_charts_widget_222_chart_1"
-																class="w-100 h-400px mb-13 mt-n4"></div>
+														<div class="tab-pane fade show active">
+															<!--Screen slider-->
+															<div class="slider">
+																<div class="slide visible">
+																	<h1>Screen 1</h1>
+																</div>
+																<div class="slide">
+																	<h1>Screen 2</h1>
+																</div>
+																<div class="slide">
+																	<h1>Screen 3</h1>
+																</div>
+																<div class="slide">
+																	<h1>Screen 4</h1>
+																</div>
+																<div class="slide">
+																	<h1>Screen 5</h1>
+																</div>
+															</div>
 														</div> 
 													</div>
 												</div>
 											</div>
 										</div>
-
-								
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-xxl-8">
@@ -9225,6 +9241,7 @@ Follow:
 		<script src="assets/js/custom/utilities/modals/new-target.js"></script>
 		<script src="assets/js/custom/utilities/modals/new-address.js"></script>
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+		<script  src="function.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 </body>
