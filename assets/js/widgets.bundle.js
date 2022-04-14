@@ -681,6 +681,7 @@ var KTChartsWidget23 = {
 						tooltipY: am5.percent(10),
 						templateField: "columnSettings"
 					}), i.data.setAll(l);
+
 					var q = t.series.push(am5xy.LineSeries.new(a, {
 						name: "Discharged Outside",
 						xAxis: o,
@@ -706,7 +707,22 @@ var KTChartsWidget23 = {
 							labelText: "{name} in {categoryX}: {valueY} {info}"
 						})
 					}));
-					s.strokes.template.setAll({
+					
+					q.strokes.template.setAll({
+						stroke: am5.color(KTUtil.getCssVariableValue("--bs-warning"))
+					}), q.strokes.template.setAll({
+						strokeWidth: 3,
+						templateField: "strokeSettings"
+					}), q.data.setAll(l), q.bullets.push((function () {
+						return am5.Bullet.new(a, {
+							sprite: am5.Circle.new(a, {
+								strokeWidth: 3,
+								stroke: am5.color(KTUtil.getCssVariableValue("--bs-warning")),
+								radius: 5,
+								fill: am5.color(KTUtil.getCssVariableValue("--bs-warning"))
+							})
+						})
+					})),s.strokes.template.setAll({
 						stroke: am5.color(KTUtil.getCssVariableValue("--bs-success"))
 					}), s.strokes.template.setAll({
 						strokeWidth: 3,
