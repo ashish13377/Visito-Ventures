@@ -236,9 +236,6 @@ var KTChartsWidget19 = {
 //Chart : END
 
 
-
-
-
 //Hazardous Waste Chart : START
 var KTChartsWidget33 = function () {
 	var e = function (e, a, t, l, o) {
@@ -707,7 +704,7 @@ var KTChartsWidget23 = {
 							labelText: "{name} in {categoryX}: {valueY} {info}"
 						})
 					}));
-					
+
 					q.strokes.template.setAll({
 						stroke: am5.color(KTUtil.getCssVariableValue("--bs-warning"))
 					}), q.strokes.template.setAll({
