@@ -131,7 +131,7 @@ var KTChartsWidget19 = {
 							endAngle: 180
 						})),
 						l = [{
-							category: "Research",
+							category: "Green Area",
 							value: 40,
 							full: 100,
 							columnSettings: {
@@ -139,7 +139,7 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-info"))
 							}
 						}, {
-							category: "Marketing",
+							category: "Afforestation",
 							value: 50,
 							full: 100,
 							columnSettings: {
@@ -147,7 +147,7 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-danger"))
 							}
 						}, {
-							category: "Distribution",
+							category: "Renewable Energy",
 							value: 80,
 							full: 100,
 							columnSettings: {
@@ -155,7 +155,7 @@ var KTChartsWidget19 = {
 								fill: am5.color(KTUtil.getCssVariableValue("--bs-primary"))
 							}
 						}, {
-							category: "Human Resources",
+							category: "Rain Water",
 							value: 70,
 							full: 100,
 							columnSettings: {
@@ -186,7 +186,7 @@ var KTChartsWidget19 = {
 					i.labels.template.setAll({
 						centerX: am5.p100,
 						fontWeight: "500",
-						fontSize: 6,
+						fontSize: 16,
 						fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
 						templateField: "columnSettings"
 					}), i.grid.template.setAll({
@@ -236,6 +236,7 @@ var KTChartsWidget19 = {
 //Chart : END
 
 
+<<<<<<< HEAD
 
 
 // Water Waste Chart : START
@@ -477,6 +478,8 @@ var KTChartsWidget222 = {
 
 
 
+=======
+>>>>>>> fbecdd7a03ddf2de60a83c446fce0921d5599fcc
 //Hazardous Waste Chart : START
 var KTChartsWidget33 = function () {
 	var e = function (e, a, t, l, o) {
@@ -945,7 +948,7 @@ var KTChartsWidget23 = {
 							labelText: "{name} in {categoryX}: {valueY} {info}"
 						})
 					}));
-					
+
 					q.strokes.template.setAll({
 						stroke: am5.color(KTUtil.getCssVariableValue("--bs-warning"))
 					}), q.strokes.template.setAll({
